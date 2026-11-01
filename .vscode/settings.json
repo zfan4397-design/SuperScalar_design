@@ -1,9 +1,0 @@
-{
-  "files.associations": { "*.v": "verilog", "*.vh": "verilog", "*.sv": "systemverilog", "*.svh": "systemverilog" },
-  "files.encoding": "utf8",
-  "editor.tabSize": 4,
-  "editor.insertSpaces": true,
-  "verilog.linting.linter": "none",
-  "files.watcherExclude": { "**/build/**": true, "**/.Xil/**": true },
-  "search.exclude": { "**/build/**": true, "**/.Xil/**": true }
-}
