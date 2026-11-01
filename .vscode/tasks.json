@@ -1,0 +1,56 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "核对公共宏定义",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/run.ps1", "-Action", "definitions-check"],
+      "problemMatcher": []
+    },
+    {
+      "label": "环境检查",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/run.ps1", "-Action", "doctor"],
+      "problemMatcher": []
+    },
+    {
+      "label": "创建 Vivado 工程",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/run.ps1", "-Action", "project"],
+      "problemMatcher": []
+    },
+    {
+      "label": "运行 RTL 仿真",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/run.ps1", "-Action", "sim"],
+      "group": { "kind": "test", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "综合自己的 RTL",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/run.ps1", "-Action", "synth"],
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "检查 3.2 参考核心编译",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/run.ps1", "-Action", "reference-check"],
+      "problemMatcher": []
+    },
+    {
+      "label": "打开 Vivado",
+      "type": "process",
+      "command": "powershell.exe",
+      "args": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", "${workspaceFolder}/scripts/run.ps1", "-Action", "open-vivado"],
+      "problemMatcher": []
+    }
+  ]
+}
